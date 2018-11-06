@@ -8,6 +8,7 @@
 \usepackage{textcomp}
 \usepackage{xcolor}
 \usepackage{polski}
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -24,7 +25,7 @@
 \and
 \IEEEauthorblockN{Maciej Kinal}
 \IEEEauthorblockA{
-@student.pwr.edu.pl}
+221358@student.pwr.edu.pl}
 \and
 \IEEEauthorblockN{Patryk Ząbkiewicz}
 \IEEEauthorblockA{
@@ -56,7 +57,23 @@ Wstępne przetworzenie obrazu wejściowego ma decydujące znaczenie dla kolejnyc
 (...fragment zostanie uzupełniony o techniki, które zostaną użyte w projekcie...)
 
 \subsection{Metody segmentacji}
-\subsubsection{Segmentacja progowa}
+\subsubsection{Segmentacja progowa (ang. \textit{threshold segmentation})}
+
+Ten rodzaj segmentacji polega na wyborze progu, powyżej którego wybrany piksel ustawiany zostaje na pierwszy plan (ang. \textit{foreground}), a w przeciwym razie na tło ((ang. \textit{background}). Istotny w tym przypadku jest wybór metody progowania. Po wstępnym zapoznaniu się i przeanalizowaniu kilku dostępnych sposobów, wybrano adaptacyjne lokalne progowanie (ang.  \textit{local adaptive thresholding}). Metoda polega na podzieleniu obrazu na mniejsze części (okna) i wyliczeniu statystyk, takich jak średnia oraz mediana sąsiadujących pikseli, a następnie aktualizacji wartości progowej. W tym przypadku jednak zdecydowano się zastosować metodę zwaną \textit{mean-C threshold}, w której występuje stała \textit{C}. Róznica polega na tym, że piksele leżące w jednakowej okolicy są przypisywane do tła. Przykład algorytmu segmentacji metodą progową \textit{mean-C} został przestawiony w pracy \cite{b7}:
+\begin{enumerate}
+\item Obliczenie średniej wartości pikseli w oknie N $\times$ N
+\item Splot wartości pikseli obrazu ze średnią
+\item Otrzymanie obrazu różnicowego poprzez odjęcie \\
+splotu od obrazu pierwotnego (po preprocessingu)
+\item Nałożenie na obraz różnicowy progu ze stałą \\
+wartością C
+\item Wyliczenie uzupełnienia otrzymanego obrazu
+\end{enumerate}
+
+Do zastosowania algorytmu \textit{mean-C} potrzebne jest wyliczenie dwóch wartości: stałej C oraz rozmiaru okna. \\
+W obu przypadkach zostanie to zrobione empirycznie.\\
+
+
 \subsubsection{Segmentacja za pomocą analizy skupisk}
 
 
@@ -81,6 +98,7 @@ W~ujęciu segmentacji obrazów algorytm przedstawia się następująco \cite{b5}
 \bibitem{b2} M.I. Lopez-Galvez, F. Manco Lavado, J.C. Pastor, ,,Diabetic Retinopathy: An Overview'', Handbook of Nutrition, Diet and the Eye, pp. 41--51, 2014.
 \bibitem{b6} S. Tatiraju, A. Mehta, ,,Image Segmentation using k-means clustering, EM and Normalized Cuts'', vol. 1, pp. 1--7, 2008
 \bibitem{b4} R. GeethaRahmani, L. Balasubramanian, ,,Retinal blood vessel segmentation employing image processing and data mining techniques for comuterized retinal image analysis'', vol. 36 , pp. 102--118 , 2016
+\bibitem{b7} J. Dash, N. Bhoi, "A thresholding based technique to extract retinal blood vessels from fundus images", Future Computing and Informatics Journal vol. 2, pp. 103--109, 2017 
 \bibitem{b5} G. Hassan, N. El-Bendary, A.E. Hassanien, A. Fahmy, A.M. Shoeb, V. Snasel, ,,Retinal blood vessel segmentation approach based on mathematical morphology'', Procedia Computer Science, vol. 65, pp. 612--622, 2015.
 
 \end{thebibliography}
