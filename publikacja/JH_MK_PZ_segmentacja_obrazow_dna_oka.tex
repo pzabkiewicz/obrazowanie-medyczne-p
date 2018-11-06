@@ -48,15 +48,41 @@ Jedną z technik obrazowania, która umożliwia śledzenie rozwoju retinopatii j
 
 Jako że duża ilość drobnych naczyń krwionośnych może wskazywać na retinopatię cukrzycową, informację tę można wykorzystać w~automatyzacji rozpoznawania tej choroby. W~tym celu, w~niniejszej pracy zostanie przeprowadzone przetworzenie obrazów -- segmentacja -- mające na celu wyodrębnienie naczyń krwionośnych z~obrazów dna oka.
 
-\section{Baza obrazów}
-\section{Metody}
+\section{Materiały i metody}
+\subsection{Baza obrazów}
+W~projekcie wykorzystano ogólnodostępny zbiór DRIVE (Digital Retinal Images for Vessel Extraction) \cite{b6}. Zbiór ten zawiera 40 kolorowych obrazów dna oka, pochodzących od osób w~wieku 31--86 lat. Każdy obraz ma wymiary 584x565 pikseli. Baza jest podzielona na zbiór uczący oraz treningowy, gdzie każdy zawiera po 20 obrazów. Wśród tych obrazów 33 nie wykazują żadnych symptomów patologicznych, pozostałe 7 uwidaczniają oznaki charakterystyczne dla retinopatii cukrzycowej (3 znajdują się w~zbiorze uczącym, a 4 są obecne w zbiorze testowym) \cite{b4}.
+\subsection{Pre-processing}
+Wstępne przetworzenie obrazu wejściowego ma decydujące znaczenie dla kolejnych etapów -- segmentacji, klasyfikacji obrazów, czy też na wydajność obliczeniową. Jak wspomniano w~\cite{b5} różnego rodzaje operacje morfologiczne na obrazach, takie jak dylacja, erozja, opening, closing, transformacja top-hat, czy też techniki usuwające szum z~obrazu jak np. \textit{median filter} pozwalają uwydatnić pewne regiony, kształty, krawędzie, granice obrazu, co podnosi skuteczność algorytmów stosowanych w~późniejszych krokach przetwarzania obrazu. 
+(...fragment zostanie uzupełniony o techniki, które zostaną użyte w projekcie...)
 
-\subsection{Segmentacja progowa}
-\subsection{Segmentacja za pomocą skupisk}
+\subsection{Metody segmentacji}
+\subsubsection{Segmentacja progowa}
+\subsubsection{Segmentacja za pomocą analizy skupisk}
+
+
+Segmentacja za pomocą analizy skupisk (z~ang. \textit{clustering segmentation}) może bazować na algorytmie K-średnich, który kategoryzuje się jako jeden z~nienadzorowanych algorytmów uczenia maszynowego. Ogólna koncepcja polega na tym, że punkty danych wejściowych klasyfikuje się na więcej niż jedną klasę w~oparciu o~odległość między każdym punktem i~od punktu centralnego dla danej klasy zwanego centroidem.
+W~ujęciu segmentacji obrazów algorytm przedstawia się następująco \cite{b5}:
+\begin{enumerate}
+\item Obliczyć histogram intensywności (rozkład intensywności)
+\item Centroidy są inicjalizowane \textit{k}-losowymi intensywnościami
+\item  Przypisać punkty do klastrów zależnie od ich odległości (najczęściej odległosć Euklidesowa) od centroidów intensywności
+\label{enumerate-item:k-mean-startloop}
+\item \label{enumerate-item:k-mean-endloop}Dla każdego klastra obliczyć nowy centroid
+\item Punkty \ref{enumerate-item:k-mean-startloop}--\ref{enumerate-item:k-mean-endloop} powtarzać do osiągnięcia stałej wartości przynależności skupienia albo do osiągnięcia maksymalnej liczby iteracji zdefiniowanej przez użytkownika.
+\end{enumerate}
+
+
+\section{Wyniki}
+
+\section{Podsumowanie}
 
 \begin{thebibliography}{00}
 \bibitem{b1} R. Lee, T.Y. Wong, C. Sabanayagam, ,,Epidemiology of diabetic retinopathy, diabetic macular edema and related vision loss'', Eye and Vision, vol. 2 pp. 17, Wrzesień 2015.
 \bibitem{b2} M.I. Lopez-Galvez, F. Manco Lavado, J.C. Pastor, ,,Diabetic Retinopathy: An Overview'', Handbook of Nutrition, Diet and the Eye, pp. 41--51, 2014.
+\bibitem{b6} S. Tatiraju, A. Mehta, ,,Image Segmentation using k-means clustering, EM and Normalized Cuts'', vol. 1, pp. 1--7, 2008
+\bibitem{b4} R. GeethaRahmani, L. Balasubramanian, ,,Retinal blood vessel segmentation employing image processing and data mining techniques for comuterized retinal image analysis'', vol. 36 , pp. 102--118 , 2016
+\bibitem{b5} G. Hassan, N. El-Bendary, A.E. Hassanien, A. Fahmy, A.M. Shoeb, V. Snasel, ,,Retinal blood vessel segmentation approach based on mathematical morphology'', Procedia Computer Science, vol. 65, pp. 612--622, 2015.
+
 \end{thebibliography}
 
 \end{document}

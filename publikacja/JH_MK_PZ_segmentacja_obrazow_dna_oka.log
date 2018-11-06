@@ -1,9 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.4)  4 NOV 2018 17:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6840 64-bit) (preloaded format=pdflatex 2018.11.4)  6 NOV 2018 15:58
 entering extended mode
 **./JH_MK_PZ_segmentacja_obrazow_dna_oka.tex
 (JH_MK_PZ_segmentacja_obrazow_dna_oka.tex
 LaTeX2e <2018-04-01> patch level 5
-(IEEEtran.cls
+
+("C:\Users\pmz19\AppData\Local\Programs\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.
+cls"
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -688,10 +690,10 @@ LaTeX Info: Redefining \nameref on input line 16.
 LaTeX Font Warning: Font shape `OT4/ptm/m/sc' undefined
 (Font)              using `OT4/ptm/m/n' instead on input line 44.
 
+[1{C:/Users/pmz19/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -703,33 +705,31 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
-[1{C:/Users/pmz19/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
-
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 88.
+[2
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
-
-(JH_MK_PZ_segmentacja_obrazow_dna_oka.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 88.
+ (JH_MK_PZ_segmentacja_obrazow_dna_oka.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 88.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 88.
 Package rerunfilecheck Info: File `JH_MK_PZ_segmentacja_obrazow_dna_oka.out' ha
 s not changed.
-(rerunfilecheck)             Checksum: 6B1BF324139806526402EE11AD847952;336.
+(rerunfilecheck)             Checksum: FFC5196E44F27EC2FAF53DD035C27A58;616.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 88.
  ) 
 Here is how much of TeX's memory you used:
- 8068 strings out of 492970
- 121184 string characters out of 3126594
- 218145 words of memory out of 3000000
- 11858 multiletter control sequences out of 15000+200000
+ 8091 strings out of 492970
+ 121585 string characters out of 3126594
+ 219333 words of memory out of 3000000
+ 11867 multiletter control sequences out of 15000+200000
  29652 words of font info for 64 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,8n,35p,663b,317s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,8n,35p,663b,428s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/pmz19/AppData/Local/Programs/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc
 }<C:/Users/pmz19/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr10.
 pfb><C:/Users/pmz19/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr
@@ -737,10 +737,10 @@ pfb><C:/Users/pmz19/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/pl/plr
 plr17.pfb><C:/Users/pmz19/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
 pl/plr8.pfb><C:/Users/pmz19/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
 c/pl/plr9.pfb>
-Output written on JH_MK_PZ_segmentacja_obrazow_dna_oka.pdf (1 page, 62436 bytes
-).
+Output written on JH_MK_PZ_segmentacja_obrazow_dna_oka.pdf (2 pages, 72116 byte
+s).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 49 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 99 PDF objects out of 1000 (max. 8388607)
+ 23 named destinations out of 1000 (max. 500000)
+ 81 words of extra memory for PDF output out of 10000 (max. 10000000)
 
