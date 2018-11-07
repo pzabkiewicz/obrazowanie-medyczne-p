@@ -21,7 +21,7 @@
 \author{
 \IEEEauthorblockN{Jakub Harasymowicz}
 \IEEEauthorblockA{
-@student.pwr.edu.pl}
+219354@student.pwr.edu.pl}
 \and
 \IEEEauthorblockN{Maciej Kinal}
 \IEEEauthorblockA{
@@ -89,6 +89,45 @@ W~ujęciu segmentacji obrazów algorytm przedstawia się następująco \cite{b5}
 \end{enumerate}
 
 
+\subsubsection{Segmentacja wododziałowa (ang. watershed segmentation)}
+
+
+W tym algorytmie segmentacji cyfrowy obraz wejściowy interpretowany jest jako powierzchnia
+topograficzna. Obszar odpowiada zlewisku – czyli terenowi z którego wody opadowe spływają do
+wspólnego zbiornika wodnego. Linia rozgraniczająca tereny zlewisk jest zwana wododziałem.
+Amplituda gradientu intensywności pikseli (lub sama intensywność) stanowi wysokość terenu,
+natomiast linia rozgraniczająca (wododział) jest zawsze umiejscowiona na grzbiecie takiej funkcji. W
+przypadku obrazu cyfrowego obszary o małej intensywności tworzą terenowe „doliny”, zaś obszary o
+dużej intensywności – „wzniesienia”. 
+\cite{b3}
+Obrazem wejściowym dla algorytmu segmentacji wododziałowej powinien być obraz gradientowy
+otrzymany z oryginalnego (np. obraz z gradacją stopni szarości).
+W segmentacji wododziałowej można wyróżnić kilka podejść 
+\cite{b8}:
+\begin{enumerate}
+\item Podejście oparte o opad deszczu (ang. \textit{rainfall})
+\begin{enumerate}
+\item Z każdego piksela obliczana jest odległość do minimum lokalnego, która jest poprowadzona
+metodą schodzenia w dół czyli przeciwnie do kierunku lokalnego gradientu („wzniesienia”)
+\item następnie do jednego takiego zlewiska zaliczane są wszystkie piksele, których droga prowadzi
+do tego samego minimum lokalnego („doliny”)
+\item Kontury segmentowanych obiektów na obrazie są wyznaczane przez wododziały tworzące się
+między takimi zlewiskami
+\item Obszary minimów mogą być „płaskie” (posiadają taką samą wartość na całym obszarze), jest
+to przeszkodą w identyfikacji, w takim przypadku pomocna okazuje się transformacja odległościowa
+(ang. \textit{distance transform})
+\end{enumerate}
+\item Podejście oparte o zatapianie (ang. \textit{sinking})
+\begin{enumerate}
+\item W obrazie znajdowane są minima lokalne do których przypisywane są zagłębienia w
+ukształtowaniu terenu (początkowe zlewiska \textit{Z})
+\item następnie zlewiska są porządkowane kolejno z rosnącym poziomem intensywności
+(\textit{Z1,Z2,...,Zn})
+\item cały obraz jest stopniowo „zanurzany w wodzie”
+\item w miejscach w których zlewiska się stykają tworzone są kontury segmentowanych obiektów
+\end{enumerate}
+\end{enumerate}
+
 \section{Wyniki}
 
 \section{Podsumowanie}
@@ -100,6 +139,8 @@ W~ujęciu segmentacji obrazów algorytm przedstawia się następująco \cite{b5}
 \bibitem{b4} R. GeethaRahmani, L. Balasubramanian, ,,Retinal blood vessel segmentation employing image processing and data mining techniques for comuterized retinal image analysis'', vol. 36 , pp. 102--118 , 2016
 \bibitem{b7} J. Dash, N. Bhoi, "A thresholding based technique to extract retinal blood vessels from fundus images", Future Computing and Informatics Journal vol. 2, pp. 103--109, 2017 
 \bibitem{b5} G. Hassan, N. El-Bendary, A.E. Hassanien, A. Fahmy, A.M. Shoeb, V. Snasel, ,,Retinal blood vessel segmentation approach based on mathematical morphology'', Procedia Computer Science, vol. 65, pp. 612--622, 2015.
+\bibitem{b3} M.S. Soundarya, T. Swathi, ,,Analysis of retinal vasculature by watershed segmentation and histogram analysis'', International Journal of Engineering Trends and Technology (IJETT) - volume 45 number 5, Marzec 2017.
+\bibitem{b8} K. Krawiec, ,,Przetwarzanie i rozpoznawanie obrazów'', 20 Kwiecień 2016.
 
 \end{thebibliography}
 
